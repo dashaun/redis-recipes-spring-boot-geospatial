@@ -17,12 +17,16 @@ jobs:
         with:
           username: dashaun
           password: ${{ secrets.DOCKERHUB_TOKEN }}
-      - name: sdkman
-        uses: sdkman/sdkman-action@main
-        id: sdkman
+#      - name: sdkman
+#        uses: sdkman/sdkman-action@main
+#        id: sdkman
+#        with:
+#          candidate: java
+#          version: 22.3.1.r17-grl
+      - uses: actions/setup-java@v2
         with:
-          candidate: java
-          version: 22.3.1.r17-grl
+          distribution: 'liberica' # See 'Supported distributions' for available options
+          java-version: '17'
       - name: Checkout master
         uses: actions/checkout@v3
         with:
