@@ -37,7 +37,7 @@ jobs:
       #Tag the version    
       #Deploy the image to the Docker registry
       - name: Push Images to Docker Registry
-        run: docker push -a dashaun/dev.dashaun.function.redis.hash
+        run: docker push -a dashaun/dev.dashaun.function.redis.geospatial
 
 
   manifest:
@@ -55,10 +55,10 @@ jobs:
           timeout_minutes: 5
           retry_wait_seconds: 60
           max_attempts: 6
-          command: docker pull dashaun/dev.dashaun.function.redis.hash:$GITHUB_REF_NAME-aarch_64
+          command: docker pull dashaun/dev.dashaun.function.redis.geospatial:$GITHUB_REF_NAME-aarch_64
       - name: create-manifest
         run: |
-          docker manifest create dashaun/dev.dashaun.function.redis.hash:$GITHUB_REF_NAME --amend dashaun/dev.dashaun.function.redis.hash:$GITHUB_REF_NAME-x86_64 --amend dashaun/dev.dashaun.function.redis.hash:$GITHUB_REF_NAME-aarch_64
-          docker manifest push dashaun/dev.dashaun.function.redis.hash:$GITHUB_REF_NAME
-          docker manifest create dashaun/dev.dashaun.function.redis.hash:latest --amend dashaun/dev.dashaun.function.redis.hash:$GITHUB_REF_NAME-x86_64 --amend dashaun/dev.dashaun.function.redis.hash:$GITHUB_REF_NAME-aarch_64
-          docker manifest push dashaun/dev.dashaun.function.redis.hash:latest
+          docker manifest create dashaun/dev.dashaun.function.redis.geospatial:$GITHUB_REF_NAME --amend dashaun/dev.dashaun.function.redis.geospatial:$GITHUB_REF_NAME-x86_64 --amend dashaun/dev.dashaun.function.redis.geospatial:$GITHUB_REF_NAME-aarch_64
+          docker manifest push dashaun/dev.dashaun.function.redis.geospatial:$GITHUB_REF_NAME
+          docker manifest create dashaun/dev.dashaun.function.redis.geospatial:latest --amend dashaun/dev.dashaun.function.redis.geospatial:$GITHUB_REF_NAME-x86_64 --amend dashaun/dev.dashaun.function.redis.geospatial:$GITHUB_REF_NAME-aarch_64
+          docker manifest push dashaun/dev.dashaun.function.redis.geospatial:latest

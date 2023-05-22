@@ -22,7 +22,7 @@ jobs:
           docker-username: DOCKER_LOGIN
           docker-password: DOCKERHUB_PASSWORD    
       - docker/push:
-          image: dashaun/dev.dashaun.function.redis.hash
+          image: dashaun/dev.dashaun.function.redis.geospatial
           tag: $CIRCLE_TAG-aarch_64
 
 workflows:
