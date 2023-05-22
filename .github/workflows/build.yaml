@@ -12,7 +12,7 @@ jobs:
 
     steps:
       - name: sdkman
-        uses: sdkman/sdkman-action@v1
+        uses: sdkman/sdkman-action@main
         id: sdkman
       - name: Checkout master
         uses: actions/checkout@v3
