@@ -128,7 +128,7 @@
         <configuration>
         <image>
           <builder>dashaun/builder:tiny</builder>
-          <name>dashaun/dev.dashaun.function.redis.geospatial:${project.version}-${os.detected.arch}</name>
+          <name>dashaun/dev.dashaun.function.redis.geospatial:v${project.version}-${os.detected.arch}</name>
         </image>
         </configuration>
       </plugin>
